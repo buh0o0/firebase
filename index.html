@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="../sabado275/01.css">
+</head>
+<body>
+    <script src="Js.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    
+    <script type="text/javascript" src="../js/configuracion.js"></script>
+    <script type="text/javascript" src="../js/guardar.js"></script>
+
+        <div class="container-form sign-up">
+            <div class="welcome-back">
+                <div class="message">
+                    <h2>Bienvenido petgood shop</h2>
+                    <button class="sign-up-btn">Iniciar Sesion</button>
+                </div>
+            </div>
+
+            <form class="formulario">
+                <h2 class="cuenta-gratis">Crear una cuenta gratis</h2>
+                    <input id="nombre" type="text" placeholder="Nombre">
+                    <input id="apellido" type="text" placeholder="apellido">
+                    <input id="telefono" type="text" placeholder="telefono">
+                    <input id="email" type="email" placeholder="Email">
+                    <input id="contraseña" type="password" placeholder="Contraseña">
+                <div class="boton1">
+                    <button class="boton" id="insertar">insertar</button>
+                    <button class="boton" id="select">seleccionar</button>
+                    <button class="boton" id="update">subir</button>
+                    <button class="boton" id="delete">borrar</button>
+                </div>
+            </form>
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDq2foESk5pkTwDMYIJ8ZZADxj0JkBXrw8",
+    authDomain: "veterinaria-4cf98.firebaseapp.com",
+    databaseURL: "https://veterinaria-4cf98-default-rtdb.firebaseio.com",
+    projectId: "veterinaria-4cf98",
+    storageBucket: "veterinaria-4cf98.appspot.com",
+    messagingSenderId: "647445601881",
+    appId: "1:647445601881:web:3c51df975a598126d3db48"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  import{getDatabase,ref,set,child,update,remove}
+  from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+
+  const db=getDatabase();
+  // referencias
+  var Nomb = document.getElementById("nombre");
+  var Ape = document.getElementById("apellido");
+  var Tel = document.getElementById("telefono");
+  var Ema = document.getElementById("email");
+  var Contr = document.getElementById("contraseña");
+
+  var insertar = document.getElementById("insertar");
+  var seleccionar = document.getElementById("select");
+  var subir = document.getElementById("update");
+  var borrar = document.getElementById("delete");
+  // insertar datos
+    function inserdata(){
+        set(ref(db,"articles/"+ Ape.value),{
+            Nombre: Nomb.value,
+            Apellido: Ape.value,
+            Telefono: Tel.value,
+            Email: Ema.value,
+            Contrasena: Contr.value
+        })
+        .then((error)=>{
+            alert("dato subido");
+        })
+        .catch((error)=>{
+            alert("error", + error);
+        });
+    }
+    // asignar eventos
+    insBtn.addEventListener('click', inserdata);
+
+
+</script>
+
+</body>
+</html>
