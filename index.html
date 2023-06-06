@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento</title>
-    <link rel="stylesheet" href="../sabado275/01.css">
+    <link rel="stylesheet" href="../firebase/01.css">
 </head>
 <body>
-    <script src="Js.js"> </script>
+    <!-- <script src="Js.js"> </script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
     
     <script type="text/javascript" src="../js/configuracion.js"></script>
-    <script type="text/javascript" src="../js/guardar.js"></script>
+    <script type="text/javascript" src="../js/guardar.js"></script> -->
 
         <div class="container-form sign-up">
             <div class="welcome-back">
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <form class="formulario">
+            <div class="formulario">
                 <h2 class="cuenta-gratis">Crear una cuenta gratis</h2>
                     <input id="nombre" type="text" placeholder="Nombre">
                     <input id="apellido" type="text" placeholder="apellido">
@@ -38,7 +38,7 @@
                     <button class="boton" id="update">subir</button>
                     <button class="boton" id="delete">borrar</button>
                 </div>
-            </form>
+            </div>
 
 
 <script type="module">
@@ -93,9 +93,7 @@
         });
     }
     // asignar eventos
-    insBtn.addEventListener('click', inserdata);
-
-
+    insertar.addEventListener('click', inserdata);
 </script>
 
 </body>
